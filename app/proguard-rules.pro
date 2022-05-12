@@ -1,1 +1,1 @@
--keep class com.example.template.MainHook
+-keep class cz.unlockx.MainHook

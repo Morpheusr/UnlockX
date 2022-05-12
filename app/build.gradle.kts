@@ -4,14 +4,15 @@ plugins {
 }
 
 android {
+
     compileSdk = 32
 
     defaultConfig {
-        applicationId = "com.example.template"
-        minSdk = 24
+        applicationId = "cz.unlockx"
+        minSdk = 29
         targetSdk = 32
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 10
+        versionName = "1.0.1"
     }
 
     buildTypes {
@@ -36,6 +37,6 @@ android {
 }
 
 dependencies {
-    implementation("com.github.kyuubiran:EzXHelper:0.9.0")
+    implementation("com.github.kyuubiran:EzXHelper:0.9.2")
     compileOnly("de.robv.android.xposed:api:82")
 }

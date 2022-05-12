@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="xposedscope">
-    <item>android</item>
+    <item>info.muge.appshare</item>
+    <item>com.miui.powerkeeper</item>
     </string-array>
 </resources>

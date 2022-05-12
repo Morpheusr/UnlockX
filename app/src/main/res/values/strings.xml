@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Test Xposed</string>
-    <string name="xposed_desc">EzXHelper template</string>
+    <string name="app_name">UnlockX</string>
+    <string name="xposed_desc">解锁,都可以解锁,有什么不能解的</string>
 </resources>
