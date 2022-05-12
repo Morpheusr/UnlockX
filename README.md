@@ -1,3 +1,6 @@
+# UnlockX
+小孩子不懂事,写着玩的
+
 # EzXhepler 模板
 [EzXHelper]的模板(https://github.com/KyuubiRan/EzXHelper)
 
@@ -9,6 +12,3 @@
 - 更改 `settings.gradle.kts` 中的 `rootProject.name`
 - 同步毕业
 - 更改 `MainHook.kt` 中的 `TAG` 和 `PACKAGE_NAME_HOOKED`
-
-关于UnlockX
-小孩子不懂事,写着玩的
