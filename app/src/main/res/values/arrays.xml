@@ -3,5 +3,7 @@
     <string-array name="xposedscope">
     <item>info.muge.appshare</item>
     <item>com.miui.powerkeeper</item>
+    <item>io.legado.app.release</item>
+    <item>io.legado.play.release</item>
     </string-array>
 </resources>

@@ -17,6 +17,10 @@ class MainHook : IXposedHookLoadPackage {
             hookappfx(lpparam)
         } else if (lpparam.packageName == "com.miui.powerkeeper") {
             hookmiui(lpparam)
+        } else if(lpparam.packageName == "io.legado.app.release") {
+            hooklegado(lpparam)
+        } else if(lpparam.packageName == "io.legado.play.release") {
+            hooklegado(lpparam)
         }
     }
 
@@ -45,6 +49,40 @@ class MainHook : IXposedHookLoadPackage {
         XposedHelpers.findAndHookMethod(miui, "IsInnerNet", object : XC_MethodHook() {
             override fun afterHookedMethod(param: MethodHookParam) {
                 param?.result = true
+            }
+        })
+    }
+
+    private fun hookmomo(lpparam: LoadPackageParam) {
+        var momo = XposedHelpers.findClass(
+            "defpackage.C0672rf",
+            lpparam.classLoader
+        )
+        XposedHelpers.findAndHookMethod(momo,"c",object : XC_MethodHook(){
+            override fun beforeHookedMethod(param: MethodHookParam?) {
+
+
+            }
+        })
+    }
+
+    private fun hooklegado(lpparam: LoadPackageParam) {
+        var legado1 = XposedHelpers.findClass(
+            "io.legado.app.help.SourceHelp",
+            lpparam.classLoader
+        )
+        var legado2 = XposedHelpers.findClass(
+            "io.legado.play.help.SourceHelp",
+            lpparam.classLoader
+        )
+        XposedHelpers.findAndHookMethod(legado1, "is18Plus", object : XC_MethodHook() {
+            override fun afterHookedMethod(param: MethodHookParam) {
+                param.result = false
+            }
+        })
+        XposedHelpers.findAndHookMethod(legado2, "is18Plus", object : XC_MethodHook() {
+            override fun afterHookedMethod(param: MethodHookParam) {
+                param.result = false
             }
         })
     }
