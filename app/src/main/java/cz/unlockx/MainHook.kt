@@ -15,6 +15,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage
 import cz.unlockx.hook.HookAppfx
 import cz.unlockx.hook.HookLegado
 import cz.unlockx.hook.HookMiui
+import cz.unlockx.hook.HookWaWei
 private const val TAG = "xposed-template"
 val targets = arrayOf("io.legado.app.release","io.legado.play.release")
 
@@ -41,6 +42,13 @@ class MainHook : IXposedHookLoadPackage {
             EzXHelperInit.setToastTag(TAG)
             // Init hooks
             initHooks(HookMiui)
+        }else if (lpparam.packageName == "com.plagh.heartstudy") {
+            // Init EzXHelper
+            EzXHelperInit.initHandleLoadPackage(lpparam)
+            EzXHelperInit.setLogTag(TAG)
+            EzXHelperInit.setToastTag(TAG)
+            // Init hooks
+            initHooks(HookWaWei)
         }
     }
 
