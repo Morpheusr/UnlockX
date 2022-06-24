@@ -9,13 +9,10 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam
 import com.github.kyuubiran.ezxhelper.init.EzXHelperInit
 import com.github.kyuubiran.ezxhelper.utils.Log
 import com.github.kyuubiran.ezxhelper.utils.Log.logexIfThrow
-import cz.unlockx.hook.Hook1
+import cz.unlockx.hook.*
 import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.callbacks.XC_LoadPackage
-import cz.unlockx.hook.HookAppfx
-import cz.unlockx.hook.HookLegado
-import cz.unlockx.hook.HookMiui
-import cz.unlockx.hook.HookWaWei
+
 private const val TAG = "xposed-template"
 val targets = arrayOf("io.legado.app.release","io.legado.play.release")
 
@@ -49,6 +46,13 @@ class MainHook : IXposedHookLoadPackage {
             EzXHelperInit.setToastTag(TAG)
             // Init hooks
             initHooks(HookWaWei)
+        }else if (lpparam.packageName == "com.miui.securitycenter") {
+            // Init EzXHelper
+            EzXHelperInit.initHandleLoadPackage(lpparam)
+            EzXHelperInit.setLogTag(TAG)
+            EzXHelperInit.setToastTag(TAG)
+            // Init hooks
+            initHooks(HookMiui1)
         }
     }
 
