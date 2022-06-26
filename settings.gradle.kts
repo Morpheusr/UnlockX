@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-include(":app")
 rootProject.name = "UnlockX"
-
+include(":app")
+include(":blockmiui")

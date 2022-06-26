@@ -11,10 +11,13 @@ object HookAppfx : Hook1() {
         findMethod("info.muge.appshare.view.main.MainActivity") {
             name == "onResume"
         }.hookAfter {
+
             XposedBridge.log("APP分享可能会倒闭,但绝不会变质!")
-            Toast.makeText(it.thisObject as Activity, "APP分享可能会倒闭,但绝不会变质!", Toast.LENGTH_LONG).show()
+            Toast.makeText(it.thisObject as Activity, "APP分享可能会倒闭,但绝不会变质!", Toast.LENGTH_LONG)
+                .show()
         }
 
-    }
 
+    }
 }
+

@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId = "cz.unlockx"
-        minSdk = 29
+        minSdk = 27
         targetSdk = 32
-        versionCode = 11
-        versionName = "1.1"
+        versionCode = 14
+        versionName = "1.22"
     }
 
     buildTypes {
@@ -39,4 +39,8 @@ android {
 dependencies {
     implementation("com.github.kyuubiran:EzXHelper:0.9.7")
     compileOnly("de.robv.android.xposed:api:82")
+    implementation("androidx.annotation:annotation:1.3.0")
+    //UI
+    implementation(project(":blockmiui"))
+    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
 }
