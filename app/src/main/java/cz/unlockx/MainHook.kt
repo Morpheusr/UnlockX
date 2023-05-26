@@ -45,26 +45,8 @@ class MainHook : IXposedHookLoadPackage {
                 // Init hooks
                 initHooks(HookMiui)
             }
-        } else if (lpparam.packageName == "com.plagh.heartstudy") {
-            // Init EzXHelper
-            EzXHelperInit.initHandleLoadPackage(lpparam)
-            EzXHelperInit.setLogTag(TAG)
-            EzXHelperInit.setToastTag(TAG)
-            // Init hooks
-            initHooks(HookWaWei)
-        } else if (lpparam.packageName == "com.miui.securitycenter") {
-            // Init EzXHelper
-            if (cz.getBoolean("wushi1_on",true)) {
-                EzXHelperInit.initHandleLoadPackage(lpparam)
-                EzXHelperInit.setLogTag(TAG)
-                EzXHelperInit.setToastTag(TAG)
-                // Init hooks
-                initHooks(HookMiui1)
-            }
         }
     }
-
-
 }
 
 
