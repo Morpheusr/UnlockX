@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation("com.github.kyuubiran:EzXHelper:2.0.4")
+    implementation("com.github.kyuubiran:EzXHelper:2.0.0")
     compileOnly("de.robv.android.xposed:api:82")
     implementation("androidx.annotation:annotation:1.3.0")
     //UI
